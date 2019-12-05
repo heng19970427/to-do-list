@@ -7,7 +7,7 @@
 
     .header {
         position: sticky;
-        top: 0px;
+        top: 0;
         width: 100vw;
         text-align: center;
         background-color: #eeeeee;
@@ -18,9 +18,14 @@
     .list-container {
         height    : 90vh;
         width     : 90%;
+        margin-top: 5px;
         overflow  : hidden;
         overflow-y: scroll;
+        -ms-overflow-style: none;
 
+        &::-webkit-scrollbar{
+            display: none;
+        }
         .item-list {
             background: #ffffff;
             padding   : 0;
