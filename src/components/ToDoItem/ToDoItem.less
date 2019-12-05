@@ -1,0 +1,43 @@
+@bg-color-normal: #eeeeee8c;
+@bg-color-important: #eeeeee; 
+
+.item {
+    width: 100%;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    min-height: 4rem;
+    padding: 5px 0px;
+
+    .icon {
+        font-size: 1.5rem;
+    }
+
+    .content {
+        .text {
+            display: inline-block;
+            padding: 0 10px;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+        .done {
+            text-decoration: line-through;
+            color: gray;
+        }
+    }
+
+    .opts {
+        min-width: 4.3rem;
+    }
+    
+}
+
+.normal {
+    background-color: @bg-color-normal;
+}
+
+.important {
+    background-color: @bg-color-important;
+}

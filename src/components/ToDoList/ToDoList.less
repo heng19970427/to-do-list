@@ -1,0 +1,38 @@
+.container {
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+    justify-content: space-between;
+    height: 100vh;
+
+    .header {
+        position: sticky;
+        top: 0px;
+        width: 100vw;
+        text-align: center;
+        background-color: #eeeeee;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .list-container {
+        height    : 90vh;
+        width     : 90%;
+        overflow  : hidden;
+        overflow-y: scroll;
+
+        .item-list {
+            background: #ffffff;
+            padding   : 0;
+            margin    : 0;
+        }
+    }
+
+
+}
+
+.item-new {
+    position: sticky;
+    bottom  : 5px;
+    width   : 90vw;
+}
