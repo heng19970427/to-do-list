@@ -1,15 +1,18 @@
-@bg-color-normal: #eeeeee8c;
-@bg-color-important: #eeeeee; 
+@bg-color-normal: #ffffff;
+@bg-color-important: #eeeeee;
+@done-color: #677bca;
+@undone-color: gray;
+@normal-color: gray;
+@important-color: red;
 
 .item {
-    width: 100%;
     margin: 5px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-radius: 5px;
     min-height: 4rem;
-    padding: 5px 0px;
+    padding: 5px 10px;
 
     .icon {
         font-size: 1.5rem;
@@ -18,9 +21,8 @@
     .content {
         .text {
             display: inline-block;
-            padding: 0 10px;
-            margin: 0 10px;
             font-size: 1.5rem;
+            color: black;
         }
         .done {
             text-decoration: line-through;

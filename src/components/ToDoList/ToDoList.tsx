@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { ItemLevel, ToDoItemProp } from '../../types';
 import ToDoItem from '../ToDoItem/ToDoItem';
@@ -6,7 +5,6 @@ import './ToDoList.less';
 
 import { Empty, Icon, Input, Select, Typography } from 'antd';
 const { Option } = Select;
-const { Title } = Typography;
 
 // tslint:disable-next-line:variable-name
 const ToDoList: React.FC = () => {
@@ -77,7 +75,7 @@ const ToDoList: React.FC = () => {
     setTimeout(() => {
       const lastItem = document.querySelector('.item:last-child');
       lastItem && lastItem.scrollIntoView({ behavior: 'smooth' });
-    },         100);
+    }, 100);
   };
 
   const handelTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -89,50 +87,45 @@ const ToDoList: React.FC = () => {
   };
 
   const levelSelect = (
-        <Select defaultValue={level} onChange={handelLevelChange} style={{ width: 100 }}>
-            <Option value={ItemLevel.Normal}>Normal</Option>
-            <Option value={ItemLevel.Important}>Important</Option>
-        </Select>
-    );
+    <Select defaultValue={level} onChange={handelLevelChange} style={{ width: 100 }}>
+      <Option value={ItemLevel.Normal}>Normal</Option>
+      <Option value={ItemLevel.Important}>Important</Option>
+    </Select>
+  );
 
   return (
-        <div className="container">
-            <header className="header">
-                <Title level={3} style={{ marginBottom:0 }}>ToDoList</Title>
-                <span style={{ fontSize: '0.7rem' }}>author: 衡玉良</span>
-            </header>
-            <div className="list-container">
-                {
-                    items.length === 0 ? <Empty description="Please add new TODO"/> :
-                        <ul className="item-list">
-                            {items.map(it =>
-                                <ToDoItem
-                                    key={it.id}
-                                    id={it.id}
-                                    text={it.text}
-                                    level={it.level}
-                                    done={it.done}
-                                    onDelete={handelDelete}
-                                    onDone={handelDone}
-                                    onLevel={handelLevel}
-                                    onEdit={handelEdit}
-                                />,
-                            )}
-                        </ul>
-                }
-
-            </div>
-            <div className="item-new">
-                <Input placeholder="input new TODO item"
-                    addonBefore={levelSelect}
-                    addonAfter={<Icon type="plus" onClick={addNewItem} />}
-                    onPressEnter={addNewItem}
-                    onChange={e => handelTextChange(e)}
-                    value={text}
-                    size="large"
-                />
-            </div>
-        </div>
+    <div className="container">
+      <div className="list-container">
+        {
+          items.length === 0 ? <Empty description="Please add new TODO" /> :
+            <ul className="item-list">
+              {items.map(it =>
+                <ToDoItem
+                  key={it.id}
+                  id={it.id}
+                  text={it.text}
+                  level={it.level}
+                  done={it.done}
+                  onDelete={handelDelete}
+                  onDone={handelDone}
+                  onLevel={handelLevel}
+                  onEdit={handelEdit}
+                />,
+              )}
+            </ul>
+        }
+      </div>
+      <div className="item-new">
+        <Input placeholder="input new TODO item"
+          addonBefore={levelSelect}
+          addonAfter={<Icon type="plus" onClick={addNewItem} />}
+          onPressEnter={addNewItem}
+          onChange={e => handelTextChange(e)}
+          value={text}
+          size="large"
+        />
+      </div>
+    </div>
 
   );
 };

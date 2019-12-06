@@ -1,4 +1,31 @@
 .App {
+    background-color: #677bca;
+    color: azure;
+    padding        :
+        constant(safe-area-inset-top) constant(safe-area-inset-right) constant(safe-area-inset-bottom) constant(safe-area-inset-left);
+
+    .header {
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 53px;
+        text-align: center;
+        .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            height: 53px;
+            width: 100%;
+            background-color: #677bcab0;
+            filter: blur(2px);
+        }
+    }
+
+    .list {
+        margin-top: 53px;
+    }
+
     .tip {
         position: fixed;
         width: 100vw;
